@@ -3,96 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQueryUI Sortable - Portlets. For diensten.</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            min-width: 520px;
-        }
-        table {
-            font-size: 1em;
-        }
-        .ui-draggable, .ui-droppable {
-            background-position: top;
-        }
-        .column {
-            width: 170px;
-            float: left;
-            padding-bottom: 100px;
-        }
-        .portlet {
-            background: green;
-            margin: 0 1em 1em 0;
-            padding: 0.3em;
-        }
-        .portlet-header {
-		    cursor: move;
-			user-select: none;
-            background: red;
-            padding: 0.2em 0.3em;
-            margin-bottom: 0.5em;
-            position: relative;
-        }
-        .portlet-toggle {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            margin-top: -8px;
-        }
-        .portlet-content {
-            padding: 0.4em;
-        }
-        .portlet-placeholder {
-            border: 3px dotted #666;
-            margin: 0 1em 1em 0;
-            height: 50px;
-        }
-    </style>
+    <title>Valaszd ki a helyes valasz(oka)t!</title>
+    <link rel="stylesheet" href="css/normalize.css"></link>
+    <link rel="stylesheet" href="css/01.css"></link>
 </head>
 <body>
-
-<div class="column">
-
-    <div class="portlet">
-        <div class="portlet-header">Feeds</div>
-        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-    <div class="portlet">
-        <div class="portlet-header">News</div>
-        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-</div>
-
-<div class="column">
-
-    <div class="portlet">
-        <div class="portlet-header">Shopping</div>
-        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-</div>
-
-<div class="column">
-
-    <div class="portlet">
-        <div class="portlet-header">Links</div>
-        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-    <div class="portlet">
-        <div class="portlet-header">Images</div>
-        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-</div>
 
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script>
     // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyA9_CPLQPx1nCcAKaprCTw0chmk-LudA9A",
+    var config = {apiKey: "AIzaSyA9_CPLQPx1nCcAKaprCTw0chmk-LudA9A",
         authDomain: "diensten-f3bd1.firebaseapp.com",
         databaseURL: "https://diensten-f3bd1.firebaseio.com",
         projectId: "diensten-f3bd1",
@@ -101,31 +21,34 @@
     };
     firebase.initializeApp(config);
 </script>
-<script src="jquery-1.12.4.js"></script>
-<script src="jquery-ui.min.js"></script>
+<!--Site-->
+<h2>Válaszd ki az összes déli gyümölcsöt</h2>
+<div id="p01">
+    <div><input id="v1" type="checkbox"/><label class="ico" for="v1">Alma</label></div>
+    <div><input id="v2" type="checkbox"/><label class="ico" for="v2">Citrom</label></div>
+    <div><input id="v3" type="checkbox"/><label class="ico" for="v3">Barack</label></div>
+    <div><input id="v4" type="checkbox"/><label class="ico" for="v4">Körte</label></div>
+    <div><input id="v5" type="checkbox"/><label class="ico" for="v5">Szilva</label></div>
+    <div><input id="v6" type="checkbox"/><label class="ico" for="v6">Narancs</label></div>
+    <div><input id="v7" type="checkbox"/><label class="ico" for="v7">Banán</label></div>
+    <div><input id="v8" type="checkbox"/><label class="ico" for="v8">Dió</label></div>
+    <div><input id="v9" type="checkbox"/><label class="ico" for="v9">Mogyoró</label></div>
+    <div><input id="v10" type="checkbox"/><label class="ico" for="v10">Füge</label></div>
+</div>
+<div class="buttons">
+    <button id="btnShowResults" data-bear="Miw2LDcsMTA=" class="results">Na, lássuk a medvét!</button>
+    <button id="btnRetry" data-pid="p01" class="results">Újra megpróbálom</button>
+    <button id="btnShowCorrectAnswer" class="results">Légyszi' mutasd a helyes választ!</button>
+</div>
+<div id="bear" class="ok">
+    <div class="answer ok">A válaszod helyes</div>
+    <div class="answer fail">A válaszod helytelen</div>
+</div>
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/howler.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-<script>
-    $( function() {
-        $( ".column" ).sortable({
-            connectWith: ".column",
-            handle: ".portlet-header",
-            cancel: ".portlet-toggle",
-            placeholder: "portlet-placeholder ui-corner-all"
-        });
-
-        $( ".portlet" )
-            .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
-            .find( ".portlet-header" )
-            .addClass( "ui-widget-header ui-corner-all" )
-            .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-
-        $( ".portlet-toggle" ).on( "click", function() {
-            var icon = $( this );
-            icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
-            icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
-        });
-    } );
-</script>
-
+<script src="js/01.js"></script>
 </body>
 </html>

@@ -38,7 +38,7 @@ html, html * {
     50% { background-color: #20fb11; }
     100% { background-color: transparent; }
 }
-.ico {background: transparent url(../img/icons-24.png) no-repeat 0 10000px;}
+.ico {background: transparent url("../img/icons-24.png") no-repeat 0 10000px;}
 body {
     padding: 20px;
 }
@@ -91,7 +91,7 @@ body.fail #btnRetry, body.fail #btnShowCorrectAnswer {display: inline-block;}
     height: 120px;
     padding: 10px 10px 10px 120px;
     margin-top: 20px;
-    background: #80471ccf url(../img/medve-100.png) no-repeat 10px 10px;
+    background: #8b4513d9 url("../img/medve-100.png") no-repeat 10px 10px;
     color: #fff;
     font:normal normal bold 2em/140% "Garamond",sans-serif;
 }

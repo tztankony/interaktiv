@@ -43,7 +43,7 @@ body {
     padding: 20px;
 }
 #p01 {
-    background-color: #8b4513d9;
+    background-color: #c38955;
     border-radius: 10px;
     padding: 20px;
 }
@@ -66,7 +66,7 @@ body {
 }
 .buttons {
     padding: 20px;
-    background-color: #8b4513d9;
+    background-color: #c38955;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -91,13 +91,13 @@ body.fail #btnRetry, body.fail #btnShowCorrectAnswer {display: inline-block;}
     height: 120px;
     padding: 10px 10px 10px 120px;
     margin-top: 20px;
-    background: #8b4513d9 url("../img/medve-100.png") no-repeat 10px 10px;
+    background: #c38955 url("../img/medve-100.png") no-repeat 10px 10px;
     color: #fff;
     font:normal normal bold 2em/140% "Garamond",sans-serif;
 }
 #bear .answer {display: none;}
 body.ok #bear {color: #00ff00;}
 body.ok #bear .answer.ok{display:block;}
-body.fail #bear {color: #7c0a02;}
+body.fail #bear {color: #ff0000;}
 body.fail #bear .answer.fail {display:block;}
 body.answered #p01 label {cursor: no-drop;}

@@ -40,7 +40,7 @@
      */
     function showCorrectAnswer(e) {
         $.each(window.atob($('#btnShowResults').data('bear')).split(','), function(){
-            $('#v' + this + '+label').addClass('flash');
+            $('#v' + this + '+label').toggleClass('flash');
         });
     }
 

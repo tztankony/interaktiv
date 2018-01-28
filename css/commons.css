@@ -9,6 +9,7 @@ html, html * {
     box-sizing: border-box;
 }
 
+/*** Clearfix ***/
 .cf:before, .cf:after {
     content: " ";
     display: table;
@@ -18,6 +19,89 @@ html, html * {
     clear: both;
 }
 
+/*** Buttons http://cssdeck.com/labs/vzqwhdoj ***/
+.button {
+    display: inline-block;
+    position: relative;
+    height: 33px;
+    line-height: 33px;
+    padding: 0 15px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    border: 2px solid;
+    border-radius: 7px;
+    outline: 0;
+    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+.button:before, .button:after {
+    content: '';
+    position: absolute;
+}
+
+.button:before {
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    z-index: -1;
+    border-radius: 9px;
+}
+
+.button:after {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0;
+    border-radius: 7px;
+}
+
+.button.alt {
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.button.alt:before {
+    display: none;
+}
+/*** Red button ***/
+.button.red {
+    background: #d02e17;
+    border-color: #942110 #902010 #741a0d;
+    background-image: -webkit-linear-gradient(top, #e74a29 0%, #e6451b 50%, #d02e17 50%, #b3150b 100%);
+    background-image: -moz-linear-gradient(top, #e74a29 0%, #e6451b 50%, #d02e17 50%, #b3150b 100%);
+    background-image: -o-linear-gradient(top, #e74a29 0%, #e6451b 50%, #d02e17 50%, #b3150b 100%);
+    background-image: linear-gradient(to bottom, #e74a29 0%, #e6451b 50%, #d02e17 50%, #b3150b 100%);
+}
+
+.button.red:before {
+    background: #ee442c;
+    background-image: -webkit-linear-gradient(top, #b32511, #f3533c);
+    background-image: -moz-linear-gradient(top, #b32511, #f3533c);
+    background-image: -o-linear-gradient(top, #b32511, #f3533c);
+    background-image: linear-gradient(to bottom, #b32511, #f3533c);
+}
+
+.button.red:active {
+    background: #e63b1b;
+    background-image: -webkit-linear-gradient(top, #a9110b 0%, #de3819 60%, #e63b1b 100%);
+    background-image: -moz-linear-gradient(top, #a9110b 0%, #de3819 60%, #e63b1b 100%);
+    background-image: -o-linear-gradient(top, #a9110b 0%, #de3819 60%, #e63b1b 100%);
+    background-image: linear-gradient(to bottom, #a9110b 0%, #de3819 60%, #e63b1b 100%);
+}
+
+.button.red:active:after {
+    border-color: #e63b1b;
+}
+
+/*** ~End of Buttons ***/
+
+/*** Flashing answers ***/
 .flash {
     animation-iteration-count: infinite;
     -moz-animation: flash 1s ease-out;
@@ -75,7 +159,7 @@ html, html * {
         background-color: transparent;
     }
 }
-
+/*** Icons ***/
 .ico {
     background: transparent url("../img/icons-24.png") no-repeat 0 10000px;
 }
@@ -83,6 +167,7 @@ html, html * {
 body {
     padding: 20px;
     background-color: #657636;
+    font: normal normal normal 1em/100% "Garamond", sans-serif;
 }
 
 h2 {
@@ -91,7 +176,9 @@ h2 {
 }
 
 .panel {
-    font: normal normal bold 1em/100% "Garamond", sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 130%;
     background-color: #c09364;
     border-radius: 10px;
     margin-top: 20px;
@@ -105,28 +192,6 @@ h2 {
     padding: 10px;
 }
 
-.panel.buttons button {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #000;
-    outline: none;
-    border-radius: 10px;
-    background: transparent;
-    cursor: pointer;
-}
-
-.panel.buttons #btnRetry, .panel.buttons #btnShowCorrectAnswer {
-    display: none;
-}
-
-body.fail .panel.buttons #btnRetry, body.fail .panel.buttons #btnShowCorrectAnswer {
-    display: inline-block;
-}
-
-.panel button:hover {
-    background: saddlebrown;
-    color: #fff;
-}
 
 #bear {
     display: none;
@@ -156,3 +221,19 @@ body.fail #bear .answer.fail {
     color: red;
 }
 
+/** States  */
+/***** Show only in Answered state *****/
+.show-when-answered {display: none;}
+body.answered .show-when-answered {display: inline-block;}
+
+/***** Show only in Unanswered state *****/
+.show-when-unanswered {display: inline-block;}
+body.answered .show-when-unanswered {display: none;}
+
+/***** Show only in Answered OK state *****/
+.show-when-ok {display: none;}
+body.ok .show-when-ok {display: inline-block;}
+
+/***** Show only in Answered Fail state *****/
+.show-when-fail {display: none;}
+body.fail .show-when-fail {display: inline-block;}

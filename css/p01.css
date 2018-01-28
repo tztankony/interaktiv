@@ -9,7 +9,7 @@
 #p01 input[type="checkbox"]+label {
     display: block;
     height: 38px;
-    line-height: 32px;
+    line-height: 38px;
     padding-left: 40px;
     cursor: pointer;
     background-position: 0 2px;

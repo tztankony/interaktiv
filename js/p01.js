@@ -24,6 +24,7 @@
 
         $('body').removeClass('answered ok fail').addClass('answered ' + answerStatus);
         $('#bear .answer.' + answerStatus).html(answers[answerStatus].choose());
+        sound.stop();
         sound.play(answerStatus);
     };
 
@@ -63,9 +64,8 @@
       $('#btnShowCorrectAnswer').on('click', showCorrectAnswer);
       $('html').on('click', '.answered .choice label', stopAnswer);
       //Load all possible answers:
-      $.getJSON('data/answers.json', function(answersJson){
-          debugger;
-          answers = answersJson;
+      $.getJSON('data/answers.json').success(function(answersFromFile){
+          answers = answersFromFile;
       });
     });
 }(jQuery));

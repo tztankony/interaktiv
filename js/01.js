@@ -39,9 +39,7 @@
         });
     }
 
-    function stopAnswer() {
-        return false;
-    };
+    function stopAnswer() {return false;};
 
     /**On Page Load.*/
     $(function(){

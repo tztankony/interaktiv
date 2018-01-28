@@ -41,11 +41,19 @@ html, html * {
 .ico {background: transparent url("../img/icons-24.png") no-repeat 0 10000px;}
 body {
     padding: 20px;
+    background-color: #657636;
+}
+h2 {
+    color: #fff;
+    text-shadow: 4px 4px 0px rgba(44,60,22,1);
 }
 #p01 {
-    background-color: #c38955;
+    background-color: #c09364;
     border-radius: 10px;
     padding: 20px;
+    -webkit-box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
+    -moz-box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
+    box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
 }
 #p01 > div {
     margin-bottom: 10px;
@@ -66,16 +74,19 @@ body {
 }
 .buttons {
     padding: 20px;
-    background-color: #c38955;
+    background-color: #c09364;
     margin-top: 20px;
     border-radius: 10px;
+    -webkit-box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
+    -moz-box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
+    box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
 }
 .buttons button {
     border: 1px solid #000;
     border-radius: 10px;
     background: transparent;
     cursor: pointer;
-    padding: 10px 40px 10px 10px;
+    padding: 10px;
     margin-left: 10px;
 }
 .buttons button:hover {
@@ -86,15 +97,18 @@ body {
 body.fail #btnRetry, body.fail #btnShowCorrectAnswer {display: inline-block;}
 #bear {
     display: none;
-    border: 1px solid saddlebrown;
     border-radius: 10px;
     height: 120px;
     padding: 10px 10px 10px 120px;
     margin-top: 20px;
-    background: #c38955 url("../img/medve-100.png") no-repeat 10px 10px;
+    background: #c09364 url("../img/medve-100.png") no-repeat 10px 10px;
     color: #fff;
     font:normal normal bold 2em/140% "Garamond",sans-serif;
+    -webkit-box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
+    -moz-box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
+    box-shadow: -15px -15px 15px -5px rgba(44,60,22,1);
 }
+
 #bear .answer {display: none;}
 body.ok #bear {color: #00ff00;}
 body.ok #bear .answer.ok{display:block;}

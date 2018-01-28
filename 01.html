@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Valaszd ki a helyes valasz(oka)t!</title>
     <link rel="stylesheet" href="css/normalize.css"></link>
-    <link rel="stylesheet" href="css/01.css"></link>
+    <link rel="stylesheet" href="css/commons.css"></link>
+    <link rel="stylesheet" href="css/p01.css"></link>
 </head>
 
-<body>
+<body id="p01">
 <!--Site-->
 <h2>Válaszd ki az összes déli gyümölcsöt</h2>
 
-<div id="p01">
-    <div><input id="v1" type="checkbox"/><label class="ico" for="v1">Alma</label></div>
-    <div><input id="v2" type="checkbox"/><label class="ico" for="v2">Citrom</label></div>
-    <div><input id="v3" type="checkbox"/><label class="ico" for="v3">Barack</label></div>
-    <div><input id="v4" type="checkbox"/><label class="ico" for="v4">Körte</label></div>
-    <div><input id="v5" type="checkbox"/><label class="ico" for="v5">Szilva</label></div>
-    <div><input id="v6" type="checkbox"/><label class="ico" for="v6">Narancs</label></div>
-    <div><input id="v7" type="checkbox"/><label class="ico" for="v7">Banán</label></div>
-    <div><input id="v8" type="checkbox"/><label class="ico" for="v8">Dió</label></div>
-    <div><input id="v9" type="checkbox"/><label class="ico" for="v9">Mogyoró</label></div>
-    <div><input id="v10" type="checkbox"/><label class="ico" for="v10">Füge</label></div>
+<div class="panel multichoice">
+    <div class="choice"><input id="v1" type="checkbox"/><label class="ico" for="v1">Alma</label></div>
+    <div class="choice"><input id="v2" type="checkbox"/><label class="ico" for="v2">Citrom</label></div>
+    <div class="choice"><input id="v3" type="checkbox"/><label class="ico" for="v3">Barack</label></div>
+    <div class="choice"><input id="v4" type="checkbox"/><label class="ico" for="v4">Körte</label></div>
+    <div class="choice"><input id="v5" type="checkbox"/><label class="ico" for="v5">Szilva</label></div>
+    <div class="choice"><input id="v6" type="checkbox"/><label class="ico" for="v6">Narancs</label></div>
+    <div class="choice"><input id="v7" type="checkbox"/><label class="ico" for="v7">Banán</label></div>
+    <div class="choice"><input id="v8" type="checkbox"/><label class="ico" for="v8">Dió</label></div>
+    <div class="choice"><input id="v9" type="checkbox"/><label class="ico" for="v9">Mogyoró</label></div>
+    <div class="choice"><input id="v10" type="checkbox"/><label class="ico" for="v10">Füge</label></div>
 </div>
-<div class="buttons">
+<div class="panel buttons">
     <button id="btnShowResults" data-bear="Miw2LDcsMTA=" class="results">Na, lássuk a medvét!</button>
+    <button id="btnExit" data-url="/interaktiv">Ki innen!</button>
     <button id="btnRetry" data-pid="p01" class="results">Újra megpróbálom</button>
     <button id="btnShowCorrectAnswer" class="results">Légyszi' mutasd a helyes választ!</button>
 </div>
-<div id="bear" class="ok">
+<div id="bear" class="panel">
     <div class="answer ok">A válaszod helyes</div>
     <div class="answer fail">A válaszod helytelen</div>
 </div>
@@ -37,6 +39,7 @@
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/howler.min.js"></script>
-<script src="js/01.js"></script>
+<script src="js/commons.js"></script>
+<script src="js/p01.js"></script>
 </body>
 </html>

@@ -1,0 +1,158 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+html, html * {
+    box-sizing: border-box;
+}
+
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.flash {
+    animation-iteration-count: infinite;
+    -moz-animation: flash 1s ease-out;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation: flash 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -ms-animation: flash 1s ease-out;
+    -ms-animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #20fb11;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@-webkit-keyframes flash {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #20fb11;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@-moz-keyframes flash {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #20fb11;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@-ms-keyframes flash {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #20fb11;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.ico {
+    background: transparent url("../img/icons-24.png") no-repeat 0 10000px;
+}
+
+body {
+    padding: 20px;
+    background-color: #657636;
+}
+
+h2 {
+    color: #fff;
+    text-shadow: 4px 4px 0px rgba(44, 60, 22, 1);
+}
+
+.panel {
+    font: normal normal bold 1em/100% "Garamond", sans-serif;
+    background-color: #c09364;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    -webkit-box-shadow: -15px -15px 15px -5px rgba(44, 60, 22, 1);
+    -moz-box-shadow: -15px -15px 15px -5px rgba(44, 60, 22, 1);
+    box-shadow: -15px -15px 15px -5px rgba(44, 60, 22, 1);
+}
+
+.panel.buttons {
+    padding: 10px;
+}
+
+.panel.buttons button {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    outline: none;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.panel.buttons #btnRetry, .panel.buttons #btnShowCorrectAnswer {
+    display: none;
+}
+
+body.fail .panel.buttons #btnRetry, body.fail .panel.buttons #btnShowCorrectAnswer {
+    display: inline-block;
+}
+
+.panel button:hover {
+    background: saddlebrown;
+    color: #fff;
+}
+
+#bear {
+    display: none;
+    font-size: 200%;
+    height: 120px;
+    padding-left: 120px;
+    background-image: url("../img/medve-100.png");
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+}
+
+#bear .answer {
+    display: none;
+}
+
+body.answered #bear {
+    display: block
+}
+
+body.ok #bear .answer.ok {
+    display: block;
+    color: green;
+}
+
+body.fail #bear .answer.fail {
+    display: block;
+    color: red;
+}
+

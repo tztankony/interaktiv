@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Valaszd ki a helyes valasz(oka)t!</title>
+    <link rel="stylesheet" href="css/normalize.css"></link>
+    <link rel="stylesheet" href="css/commons.css"></link>
+    <link rel="stylesheet" href="css/p02.css"></link>
+</head>
+
+<body id="p02">
+<!--Site-->
+<h2>Kösd össze a megfelelő elemeket</h2>
+
+<div class="panel connectables cf">
+    <div class="item-holder sources" data-pair=".destinations">
+        <div data-id="alma" data-connectedto="[]" class="connectable source">Alma</div>
+        <div data-id="lo" data-connectedto="[]" class="connectable source">Ló</div>
+        <div data-id="piros" data-connectedto="[]" class="connectable source">Piros</div>
+    </div>
+    <div class="item-holder destinations" data-pair=".sources">
+        <div data-id="szin" data-connectedto="[]" class="connectable destination">Szín</div>
+        <div data-id="allat" data-connectedto="[]" class="connectable destination">Állat</div>
+        <div data-id="gyumolcs" data-connectedto="[]" class="connectable destination">Gyümölcs</div>
+    </div>
+
+</div>
+<div class="panel buttons">
+    <button id="btnShowResults" data-bear="Miw2LDcsMTA=" class="button red show-when-unanswered">Na, lássuk a medvét!</button>
+    <button id="btnRetry" data-pid="p01" class="button red show-when-answered">Újra megpróbálom</button>
+    <button id="btnShowCorrectAnswer" class="button red show-when-fail">Muti a helyes választ!</button>
+    <button id="btnExit" data-url="/interaktiv" class="button red">Kifelé innen!</button>
+</div>
+<div id="bear" class="panel">
+    <div class="answer ok">A válaszod helyes</div>
+    <div class="answer fail">A válaszod helytelen</div>
+</div>
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/howler.min.js"></script>
+<script src="js/commons.js"></script>
+<script src="js/p02.js"></script>
+</body>
+</html>

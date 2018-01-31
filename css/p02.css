@@ -1,0 +1,27 @@
+#p02 .panel.connectables {
+    border: 1px solid red;
+    width: 100%;
+}
+#p02 .panel.connectables > .sources{
+    border: 1px solid green;
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+#p02 .panel.connectables > .destinations{
+    border: 1px solid blue;
+    float: left;
+    margin-left: 49%;
+    width: 25%;
+    height: 100%;
+}
+
+#p02 .panel.connectables .connectable {
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    background: #942110;
+    border-radius: 10px;
+}
+#p02 .panel.connectables > .connectable:last-child {
+    margin-bottom: 10px;
+}

@@ -1,15 +1,13 @@
 #p02 .panel.connectables {
-    border: 1px solid red;
+    position: relative;
     width: 100%;
 }
 #p02 .panel.connectables > .sources{
-    border: 1px solid green;
     float: left;
     width: 25%;
     height: 100%;
 }
 #p02 .panel.connectables > .destinations{
-    border: 1px solid blue;
     float: left;
     margin-left: 49%;
     width: 25%;
@@ -24,4 +22,13 @@
 }
 #p02 .panel.connectables > .connectable:last-child {
     margin-bottom: 10px;
+}
+#p02 .panel.connectables .arrow{
+    position: absolute;
+    height:12px;
+    background: url("../img/Arrow.png") no-repeat 100% 50%;
+}
+
+#p02 .panel.connectables .arrow.reverse{
+    background-position: 0 50%;
 }

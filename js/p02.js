@@ -11,16 +11,22 @@
     });
     function getGivenAnswers(probId) {
         var results = [];
-        $('#' + probId + ' :checked').each(function(){
-            results.push(this.id.replace(/\D/g,''));
+        $('#' + probId + ' div.arrow').each(function(){
+            results.push(this.id.replace(/^arrow-/,'').split('_'));
         });
-        return results.join(',');
+        return sortArrayOfArray(results);
     };
-
+    function sortArrayOfArray(aa) {
+        aa = aa.sort();
+        for(var i = 0; i < aa.length; i++) {
+            aa.splice(i, 1, aa[i].sort());
+        }
+        return aa;
+    }
     function showResults(e) {
-        var correctAnswers = window.atob($(e.currentTarget).data('bear')),
-            givenAnswers = getGivenAnswers('p01'),
-            isCorrect = (correctAnswers === givenAnswers),
+        var correctAnswers = sortArrayOfArray(JSON.parse(window.atob($(e.currentTarget).data('bear')))),
+            givenAnswers = getGivenAnswers('p02'),
+            isCorrect = (correctAnswers.toString() === givenAnswers.toString()),
             answerStatus = isCorrect ? 'ok' : 'fail';
 
         $('body').removeClass('answered ok fail').addClass('answered ' + answerStatus);
@@ -30,7 +36,8 @@
     };
 
     function retryProblem(e) {
-        $('#' + $(e.currentTarget).data('pid') + ' :checked').removeAttr('checked');
+        $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]');
+        $('.arrow').remove();
         $('body').removeClass('answered ok fail');
         $('label.flash').removeClass('flash');
     }
@@ -40,7 +47,18 @@
      * @param e
      */
     function showCorrectAnswer(e) {
-        console.info('Implement show correct answer...');
+        if($('.arrow.flash').length > 0) {
+            $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]');
+            $('.arrow').remove();
+            return;
+        }
+        var correctAnswers = JSON.parse(window.atob($('#btnShowResults').data('bear')));
+        $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]');
+        $('.arrow').remove();
+        $.each(correctAnswers, function(){
+            addArrow($('#' + this[0]), $('#' + this[1]));
+        });
+        $('.arrow').addClass('flash');
     }
 
     /**

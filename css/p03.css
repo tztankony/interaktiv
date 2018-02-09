@@ -1,0 +1,22 @@
+#p03 .panel.multichoice .choice {
+    margin-bottom: 10px;
+}
+#p03 .panel.multichoice > .choice:last-child {
+    margin-bottom: 10px;
+}
+
+#p03 input[type="checkbox"] {display: none;}
+#p03 input[type="checkbox"]+label {
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 40px;
+    cursor: pointer;
+    background-position: 0 2px;
+}
+#p03 input[type="checkbox"]:checked+label {
+    background-position: 0 -130px;
+}
+#p03.answered input[type="checkbox"]+label {
+    cursor: no-drop;
+}

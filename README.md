@@ -1,3 +1,5 @@
 # tztankonyv.github.io
 Feladatok:
-- [Rakd Helyes sorrendbe](01.html)
+- [Add meg a helyes valaszokat](01.html)
+- [Kösd össze a megfelelő fogalmakat](02.html)
+- [Add meg a helyes valaszokat](03.html)

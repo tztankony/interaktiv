@@ -24,7 +24,7 @@
         return aa;
     }
     function showResults(e) {
-        var correctAnswers = sortArrayOfArray(JSON.parse(window.atob($(e.currentTarget).data('bear')))),
+        var correctAnswers = sortArrayOfArray(JSON.parse(window.atob($(e.currentTarget).attr('data-bear')))),
             givenAnswers = getGivenAnswers('p02'),
             isCorrect = (correctAnswers.toString() === givenAnswers.toString()),
             answerStatus = isCorrect ? 'ok' : 'fail';
@@ -36,7 +36,7 @@
     };
 
     function retryProblem(e) {
-        $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]');
+        $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]').data('connectedto',[]);
         $('.arrow').remove();
         $('body').removeClass('answered ok fail');
         $('label.flash').removeClass('flash');
@@ -48,12 +48,12 @@
      */
     function showCorrectAnswer(e) {
         if($('.arrow.flash').length > 0) {
-            $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]');
+            $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]').data('connectedto',[]);
             $('.arrow').remove();
             return;
         }
-        var correctAnswers = JSON.parse(window.atob($('#btnShowResults').data('bear')));
-        $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]');
+        var correctAnswers = JSON.parse(window.atob($('#btnShowResults').attr('data-bear')));
+        $('.panel .connectable').removeClass('flash').attr('data-connectedto','[]').data('connectedto',[]);
         $('.arrow').remove();
         $.each(correctAnswers, function(){
             addArrow($('#' + this[0]), $('#' + this[1]));
@@ -71,7 +71,7 @@
      * Follows the url specified in the data-url attribute.
      * @param e
      */
-    function followUrl(e) {location.href = $(e.currentTarget).data('url');};
+    function followUrl(e) {location.href = $(e.currentTarget).attr('data-url');};
 
     function addArrow($source, $dest) {
         var sO = $source.position(), dO = $dest.position(),
@@ -135,13 +135,13 @@
         }
         $sourceItem.attr('data-connectedto', '[' + sourceConnections.join(',') + ']');
         $destinationItem.attr('data-connectedto', '[' + destinationConnections.join(',') + ']');
-        stopFlashing($sourceItem.add($destinationItem), 1000);
+        stopFlashing($sourceItem.add($destinationItem), 500);
     }
 
     function onConnectableClick(e) {
         var $clickedItem = $(e.currentTarget),
             $holder=$clickedItem.closest('.item-holder'),
-            $pairHolder = $($holder.data('pair')),
+            $pairHolder = $($holder.attr('data-pair')),
             $flashingPair = $pairHolder.find('.flash'),
             isThisFlashing = $clickedItem.is('.flash'),
             isPairFlashing = !!$flashingPair.length,

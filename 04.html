@@ -11,10 +11,33 @@
 
 <body id="p04">
 <!--Site-->
-<h2>Babocsai</h2>
+<h2 class="description">Nézd meg figyelmesen az alábbi ábrát, s helyezd el rajta odahúzással a felsorolt szereplőket!<br/>
+    Szereplők: Babocsainé, Csomay, Bogics, Szahin, Szinán, Máté, Kis Máté, Zsuzsa, Aisa, Kales, Katzián, Borgó.
+</h2>
+<div class="svgs clearfix">
+    <div class="svg-box" data-svg="img/p04.svg"></div>
+    <!--
+    <div class="szereplok" data-svg="img/szereplok.svg"></div>
+    <div class="babocsai" data-svg="img/babocsai.svg"></div>
+    -->
+</div>
+
+<div class="panel buttons">
+    <button id="btnShowResults" data-bear="MSwz" class="button red show-when-unanswered">Na, lássuk a medvét!</button>
+    <button id="btnRetry" data-pid="p01" class="button red show-when-answered">Újra megpróbálom</button>
+    <button id="btnShowCorrectAnswer" class="button red show-when-fail">Muti a helyes választ!</button>
+    <button id="btnExit" data-url="/interaktiv" class="button red">Kifelé innen!</button>
+</div>
+
+<div id="bear" class="panel">
+    <div class="answer ok">A válaszod helyes</div>
+    <div class="answer fail">A válaszod helytelen</div>
+</div>
 
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/Draggable.min.js"></script>
 <script src="js/howler.min.js"></script>
 <script src="js/commons.js"></script>
 <script src="js/p04.js"></script>

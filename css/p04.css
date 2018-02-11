@@ -1,22 +1,28 @@
-#p04 .panel.multichoice .choice {
-    margin-bottom: 10px;
+#p04 h2.description {
+    border: 1px solid red;
 }
-#p04 .panel.multichoice > .choice:last-child {
-    margin-bottom: 10px;
+#p04 .svgs{
+    border: 1px solid red;
+    float: left;
+    width: 100%;
+    height: 500px;
+}
+#p04 .svgs .szereplok{
+    border: 1px solid green;
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+#p04 .svgs .babocsai{
+    border: 1px solid blue;
+    float: left;
+    width: 72%;
+    height: 100%;
+    margin-left: 3%;
 }
 
-#p04 input[type="checkbox"] {display: none;}
-#p04 input[type="checkbox"]+label {
-    display: block;
-    height: 38px;
-    line-height: 38px;
-    padding-left: 40px;
-    cursor: pointer;
-    background-position: 0 2px;
-}
-#p04 input[type="checkbox"]:checked+label {
-    background-position: 0 -130px;
-}
-#p04.answered input[type="checkbox"]+label {
-    cursor: no-drop;
+#p04 .svg-box {
+    width: 100%;
+    height: 100%;
+    border: 2px solid yellow;
 }

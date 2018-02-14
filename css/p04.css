@@ -7,22 +7,60 @@
     width: 100%;
     height: 500px;
 }
-#p04 .svgs .szereplok{
+/*****  Left side: Persons *****/
+#p04 .svgs .persons{
     border: 1px solid green;
     float: left;
     width: 25%;
     height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
-#p04 .svgs .babocsai{
+#p04 .svgs .persons > .person{
+    background-color: yellow;
+    border:3px solid black;
+    border-radius: 50%;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    font-size:100%;
+    color:teal;
+    float: left;
+    margin: 10px;
+    /*background: transparent url(../img/empty-circle.svg) no-repeat 0 0;
+    background-size: 100% auto;*/
+}
+/*****  Right side Drop zones*****/
+#p04 .svgs .dropfield {
     border: 1px solid blue;
+    position: relative;
     float: left;
     width: 72%;
     height: 100%;
     margin-left: 3%;
 }
 
-#p04 .svg-box {
-    width: 100%;
-    height: 100%;
-    border: 2px solid yellow;
+#p04 .svgs .dropfield .centerzone{
+    position: absolute;
+    display: table;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 140%;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 10%;
+    height: 20%;
+    background: darkcyan;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#p04 .svgs .dropfield .centerzone > span {
+    display: table-cell;
+    vertical-align: middle;
 }

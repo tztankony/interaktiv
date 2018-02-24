@@ -1,15 +1,28 @@
+#p04 {border: 3px solid yellow;}
 #p04 h2.description {
-    border: 1px solid red;
+    margin:0;
+    padding:0;
+    border: 2px solid red;
 }
 #p04 .svgs{
     border: 1px solid red;
     float: left;
     width: 100%;
-    height: 500px;
+    height: calc(100% - 130px);
+}
+#p04.answered .svgs{
+    height: calc(100% - 270px);
+}
+
+#p04 .panel.buttons {
+    border: 1px solid cyan;
+    float: left;
+    width: 100%;
+    height: 55px;
 }
 /*****  Left side: Persons *****/
 #p04 .svgs .persons{
-    border: 1px solid green;
+    border: 1px solid magenta;
     float: left;
     width: 25%;
     height: 100%;
@@ -44,23 +57,34 @@
 
 #p04 .svgs .dropfield .centerzone{
     position: absolute;
-    display: table;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    font-weight: bold;
-    font-size: 140%;
-    border: 3px solid white;
-    border-radius: 50%;
-    width: 10%;
-    height: 20%;
-    background: darkcyan;
+    Xdisplay: table;
+    width: 25%;
+    height: 25%;
     margin: 0 auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: url("../img/blue-center.svg") no-repeat 0 0;
+    background-size: 100% 100%;
+    border: 2px solid black;
 }
 #p04 .svgs .dropfield .centerzone > span {
     display: table-cell;
     vertical-align: middle;
+}
+#p04 .svgs .dropfield .dz {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background: transparent url("../img/empty-circle.svg") no-repeat 0 0;
+    background-size: 100% 100%;
+}
+#p04 #bear.panel {
+    float: left;
+    width: 100%;
+    height: 120px;
+    border: 1px solid darkmagenta;
 }

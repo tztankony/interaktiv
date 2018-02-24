@@ -87,5 +87,6 @@
         $.getJSON('data/answers.json').success(function (answersFromFile) {
             window.TZ.answers = answersFromFile;
         });
+        $(window).trigger('resizeEnded');
     });
 }(jQuery));

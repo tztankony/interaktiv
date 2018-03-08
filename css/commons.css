@@ -166,7 +166,7 @@ html, html * {
 
 body {
     padding: 20px;
-    background-color: #657636;
+	background: #657636 url("../img/berries.png") no-repeat right top;
     font: normal normal normal 1em/100% "Garamond", sans-serif;
 }
 

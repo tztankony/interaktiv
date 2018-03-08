@@ -24,7 +24,7 @@
         },
         /**Try the problem again.*/
         retryProblem: function (e) {
-            $('#' + $(e.currentTarget).data('pid') + ' :checked').removeAttr('checked');
+            $('[data-problemid="' + $(e.currentTarget).data('pid') + '"] :checked').removeAttr('checked');
             $('body').removeClass('answered ok fail');
             $('label.flash').removeClass('flash');
         },

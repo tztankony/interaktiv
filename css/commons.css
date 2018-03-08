@@ -219,7 +219,7 @@ body.ok #bear .answer.ok {
 
 body.fail #bear .answer.fail {
     display: block;
-    color: red;
+    color: #a21717;
 }
 
 /** States  */

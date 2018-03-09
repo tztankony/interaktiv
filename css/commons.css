@@ -199,17 +199,22 @@ h2 {
     font-size: 200%;
     height: 120px;
     padding-left: 120px;
-    background-image: url("../img/medve-100.png");
+    background-image: url("../img/faces.png");
     background-repeat: no-repeat;
     background-position: 10px 10px;
 }
-
+body.fail #bear {
+	background-position: 10px -590px;
+}
 #bear .answer {
     display: none;
 }
 
 body.answered #bear {
     display: block
+}
+body.answered .clickable {
+    cursor: no-drop !important;
 }
 
 body.ok #bear .answer.ok {

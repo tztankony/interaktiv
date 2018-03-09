@@ -4,15 +4,19 @@
     var resizeTimer = 0, resizeStarted = false;
     /**Common API*/
     window.TZ = {
-        answers: {"ok": ["Helyes!"], "fail": ["Helytelen!"]},
-        sound: new Howl({
-            src: ['audio/sounds.mp3', 'audio/sounds.ogg'],
-            preload: true,
-            sprite: {
-                'ok': [0, 3500],
-                'fail': [3750, 4326]
-            }
-        }),
+        answers: {
+            "ok": [
+                "Helyesen válaszoltál!",
+                "Helyes!",
+                "Válaszod helyes!"
+            ],
+            "fail": [
+                "Helytelenül válaszoltál!",
+                "Helytelen!",
+                "Válaszod hibás!"
+            ]
+        },
+        sound: {play: $.noop, stop: $.noop},
         /**Common API with default implementations.*/
         API: {
             getGivenAnswers: function (problemId) {
@@ -42,7 +46,11 @@
              */
             stopAnswer: function () {
                 return false;
-            }
+            },
+			playSound: function (soundId) {
+				//TZ.sound[soundId].pause();
+				TZ.sound[soundId].play();
+			}
         }
     };
 
@@ -64,11 +72,11 @@
     /**On Page Load.*/
     $(function () {
         $(document).off('.tz')
+			.on('click.tz', '.answered .clickable', TZ.API.stopAnswer.bind(window.TZ))		
             .on('click.tz', '#btnExit', TZ.API.followUrl.bind(window.TZ))
             .on('click.tz', '#btnShowResults', TZ.API.showResults.bind(window.TZ))
             .on('click.tz', '#btnRetry', TZ.API.retryProblem.bind(window.TZ))
-            .on('click.tz', '#btnShowCorrectAnswer', TZ.API.showCorrectAnswer.bind(window.TZ))
-            .on('click.tz', '.answered .choice label', TZ.API.stopAnswer.bind(window.TZ));
+            .on('click.tz', '#btnShowCorrectAnswer', TZ.API.showCorrectAnswer.bind(window.TZ));
 
         $(window).on('resize', function (e) {
             if (!resizeStarted) {
@@ -82,11 +90,7 @@
             }, 200);
         });
         $(window).on('resizeStarted', window.TZ.API.beforeResize).on('resizeEnded', window.TZ.API.afterResize.bind(window.TZ));
-
-        //Load all possible answers:
-        $.getJSON('data/answers.json').success(function (answersFromFile) {
-            window.TZ.answers = answersFromFile;
-        });
+		window.TZ.sound = {"ok": $('#sndOk')[0], "fail": $('#sndFail')[0]}
         $(window).trigger('resizeEnded');
     });
 }(jQuery));

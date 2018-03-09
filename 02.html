@@ -10,29 +10,32 @@
 </head>
 
 <body id="p02">
+<audio id="sndOk" preload="auto"><source src="./audio/ok.ogg" type="audio/ogg"><source src="./audio/ok.mp3" type="audio/mpeg"></audio>
+<audio id="sndFail" preload="auto"><source src="./audio/fail.ogg" type="audio/ogg"><source src="./audio/fail.mp3" type="audio/mpeg"></audio>
+
 <!--Site-->
 <h2>Mit jelenthetnek a következő kifejezések?<br/>Kapcsoljátok össze a nekik megfelelő jelentésekkel! (kattints sorrendben az összetartozó elemekre).</h2>
 <!--"[["btv","pv"],["fm","fkv"],["vkbe","nhsvr"],["kcne","vbh"]]"-->
 <div class="panel connectables cf">
     <div class="item-holder sources" data-pair=".destinations">
-        <div id="btv" data-connectedto="[]" class="connectable source">bajt töszöl vele</div>
-        <div id="fm" data-connectedto="[]" class="connectable source">főlegényszámba ment</div>
-        <div id="vkbe" data-connectedto="[]" class="connectable source">vitézi kenyerem böcsülettel eszem</div>
-        <div id="kcne" data-connectedto="[]" class="connectable source">kardján csorba nem esett</div>
+        <div id="btv" data-connectedto="[]" class="connectable source clickable">bajt töszöl vele</div>
+        <div id="fm" data-connectedto="[]" class="connectable source clickable">főlegényszámba ment</div>
+        <div id="vkbe" data-connectedto="[]" class="connectable source clickable">vitézi kenyerem böcsülettel eszem</div>
+        <div id="kcne" data-connectedto="[]" class="connectable source clickable">kardján csorba nem esett</div>
     </div>
     <div class="item-holder destinations" data-pair=".sources">
-        <div id="vbh" data-connectedto="[]" class="connectable destination">vitézül, becsülettel harcolt</div>
-        <div id="pv" data-connectedto="[]" class="connectable destination">párbajozol vele</div>
-        <div id="fkv" data-connectedto="[]" class="connectable destination">fontos katona volt</div>
-        <div id="nhsvr" data-connectedto="[]" class="connectable destination">nem hozok szégyent vitézi rangomra</div>
+        <div id="vbh" data-connectedto="[]" class="connectable destination clickable">vitézül, becsülettel harcolt</div>
+        <div id="pv" data-connectedto="[]" class="connectable destination clickable">párbajozol vele</div>
+        <div id="fkv" data-connectedto="[]" class="connectable destination clickable">fontos katona volt</div>
+        <div id="nhsvr" data-connectedto="[]" class="connectable destination clickable">nem hozok szégyent vitézi rangomra</div>
     </div>
 
 </div>
 <div class="panel buttons">
-    <button id="btnShowResults" data-bear="W1siYnR2IiwicHYiXSxbImZtIiwiZmt2Il0sWyJ2a2JlIiwibmhzdnIiXSxbImtjbmUiLCJ2YmgiXV0=" class="button red show-when-unanswered">Na, lássuk a medvét!</button>
-    <button id="btnRetry" data-pid="p01" class="button red show-when-answered">Újra megpróbálom</button>
+    <button id="btnShowResults" data-bear="W1siYnR2IiwicHYiXSxbImZtIiwiZmt2Il0sWyJ2a2JlIiwibmhzdnIiXSxbImtjbmUiLCJ2YmgiXV0=" class="button red show-when-unanswered">Lássuk a választ!</button>
+    <button id="btnRetry" data-pid="p01" class="button red show-when-answered">Próbálkozz újra</button>
     <button id="btnShowCorrectAnswer" class="button red show-when-fail">Mi a helyes válasz?</button>
-    <button id="btnExit" data-url="/interaktiv" class="button red">Kifelé innen!</button>
+    <button id="btnExit" data-url="/interaktiv" class="button red">Kilépés</button>
 </div>
 <div id="bear" class="panel">
     <div class="answer ok">A válaszod helyes</div>
@@ -40,8 +43,7 @@
 </div>
 
 <script src="js/3rdparty/jquery/jquery-1.12.4.min.js"></script>
-<script src="js/3rdparty/jquery-ui/jquery-ui.min.js"></script>
-<script src="js/3rdparty/howler/howler.min.js"></script>
+<!--script src="js/3rdparty/howler/howler.min.js"></script-->
 <script src="js/tz/commons.js"></script>
 <script src="js/tz/association.js"></script>
 </body>

@@ -1,15 +1,12 @@
 {
   "ok": [
-    "Ez rendben van!",
-    "Ez már döfi!",
-    "Ez nem semmi!",
-    "Minden ok."
+    "Helyesen válaszoltál!",
+    "Helyes!",
+    "Válaszod helyes!"
   ],
   "fail": [
-    "Ezen még csíszolni kell ...",
-    "Itt valami nem kóser!",
-    "Ez még nem az igazi!",
-    "Lesz ez még jobb is!",
-    "Erre még gyúrnod kell!"
+    "Helytelenül válaszoltál!",
+    "Helytelen!",
+    "Válaszod hibás!"
   ]
 }

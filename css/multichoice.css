@@ -17,6 +17,3 @@ body.multichoice input[type="checkbox"]+label {
 body.multichoice input[type="checkbox"]:checked+label {
     background-position: 0 -130px;
 }
-body.multichoice.answered input[type="checkbox"]+label {
-    cursor: no-drop;
-}

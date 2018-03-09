@@ -19,8 +19,7 @@
 
             $('body').removeClass('answered ok fail').addClass('answered ' + answerStatus);
             $('#bear .answer.' + answerStatus).html(TZ.answers[answerStatus].choose());
-            TZ.sound.stop();
-            TZ.sound.play(answerStatus);
+            TZ.API.playSound(answerStatus);
         },
         /**Try the problem again.*/
         retryProblem: function (e) {
@@ -173,6 +172,6 @@
 
     /**On Load. Page specific.*/
     $(function () {
-        $(document).on('click.tz', '.connectable', onConnectableClick);
+        $(document).on('click.tz', 'body:not(.answered) .connectable', onConnectableClick);
     });
 }(jQuery));

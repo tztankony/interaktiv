@@ -10,22 +10,25 @@
 </head>
 
 <body class="multichoice" data-problemid="p03">
+<audio id="sndOk" preload="auto"><source src="./audio/ok.ogg" type="audio/ogg"><source src="./audio/ok.mp3" type="audio/mpeg"></audio>
+<audio id="sndFail" preload="auto"><source src="./audio/fail.ogg" type="audio/ogg"><source src="./audio/fail.mp3" type="audio/mpeg"></audio>
+
 <!--Site-->
 <h2>Mely fogalmak igazak leginkább Kales kapitányra?<br/>Kattintással pipáld ki az összes helyes választ!</h2>
 <!--humoros, személyes, személytelen, letört, szomorkás, ironikus-->
 <div class="panel multichoice">
-    <div class="choice"><input id="v1" type="checkbox"/><label class="ico" for="v1">humoros</label></div>
-    <div class="choice"><input id="v2" type="checkbox"/><label class="ico" for="v2">személyes</label></div>
-    <div class="choice"><input id="v3" type="checkbox"/><label class="ico" for="v3">személytelen</label></div>
-    <div class="choice"><input id="v4" type="checkbox"/><label class="ico" for="v4">letört</label></div>
-    <div class="choice"><input id="v5" type="checkbox"/><label class="ico" for="v5">szomorkás</label></div>
-    <div class="choice"><input id="v6" type="checkbox"/><label class="ico" for="v6">ironikus</label></div>
+    <div class="choice"><input id="v1" type="checkbox"/><label class="ico clickable" for="v1">humoros</label></div>
+    <div class="choice"><input id="v2" type="checkbox"/><label class="ico clickable" for="v2">személyes</label></div>
+    <div class="choice"><input id="v3" type="checkbox"/><label class="ico clickable" for="v3">személytelen</label></div>
+    <div class="choice"><input id="v4" type="checkbox"/><label class="ico clickable" for="v4">letört</label></div>
+    <div class="choice"><input id="v5" type="checkbox"/><label class="ico clickable" for="v5">szomorkás</label></div>
+    <div class="choice"><input id="v6" type="checkbox"/><label class="ico clickable" for="v6">ironikus</label></div>
 </div>
 <div class="panel buttons">
-    <button id="btnShowResults" data-bear="Miw2" class="button red show-when-unanswered">Na, lássuk a medvét!</button>
-    <button id="btnRetry" data-pid="p03" class="button red show-when-answered">Újra megpróbálom</button>
+    <button id="btnShowResults" data-bear="Miw2" class="button red show-when-unanswered">Lássuk a választ!</button>
+    <button id="btnRetry" data-pid="p03" class="button red show-when-answered">Próbálkozz újra</button>
     <button id="btnShowCorrectAnswer" class="button red show-when-fail">Mi a helyes válasz?</button>
-    <button id="btnExit" data-url="/interaktiv" class="button red">Kifelé innen!</button>
+    <button id="btnExit" data-url="/interaktiv" class="button red">Kilépés</button>
 </div>
 <div id="bear" class="panel">
     <div class="answer ok">A válaszod helyes</div>
@@ -33,8 +36,7 @@
 </div>
 
 <script src="js/3rdparty/jquery/jquery-1.12.4.min.js"></script>
-<script src="js/3rdparty/jquery-ui/jquery-ui.min.js"></script>
-<script src="js/3rdparty/howler/howler.min.js"></script>
+<!--script src="js/3rdparty/howler/howler.min.js"></script-->
 <script src="js/tz/commons.js"></script>
 <script src="js/tz/multichoice.js"></script>
 </body>

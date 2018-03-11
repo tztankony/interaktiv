@@ -68,17 +68,17 @@
         $centerzone.css({left: midCirc.l, top: midCirc.t});
 
         console.log('centerzonePos(x,y): ', midCirc);
-        $('#p04 .dropfield .dz').each(function(){
-            var $dz = $(this),
-                dzleft = midCirc.x + midCirc.r * Math.cos(i*Math.PI/6),
+        $('#p04 .dropfield .dz').each(function(i, dz){
+            var $dz = $(dz),
+                dzLeft = midCirc.x + midCirc.r * Math.cos(i*Math.PI/6),
                 dzTop = midCirc.y - midCirc.r * Math.sin(i*Math.PI/6);
+
             $dz.css({width: dropZoneWidth, height: dropZoneWidth, left: dzLeft, top:dzTop});
         });
         $('#p04 .dropfield .dz').show();
     }
     /**Page specific on Load*/
     $(function() {
-        $('.persons > .person').draggable();
-        $('.dropfield > .dz').droppable();
+
     });
 }(jQuery));

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Babocsai!</title>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/commons.css"/>
+    <link rel="stylesheet" href="css/p04.css"/>
+</head>
+
+<body id="p04">
+<!--Site-->
+<h2 class="description">Nézd meg figyelmesen az alábbi ábrát, s helyezd el rajta odahúzással a felsorolt szereplőket!<br/>
+    Szereplők: Babocsainé, Csomay, Bogics, Szahin, Szinán, Máté, Kis Máté, Zsuzsa, Aisa, Kales, Katzián, Borgó.
+</h2>
+<div class="svgs clearfix">
+    <div class="persons">
+        <div class="person connectable source clickable">Babocsainé</div>
+        <div class="person connectable source clickable">Csomay</div>
+        <div class="person connectable source clickable">Bogics</div>
+        <div class="person connectable source clickable">Szahin</div>
+        <div class="person connectable source clickable">Szinán</div>
+        <div class="person connectable source clickable">Máté</div>
+        <div class="person connectable source clickable">Kis Máté</div>
+        <div class="person connectable source clickable">Zsuzsa</div>
+        <div class="person connectable source clickable">Aisa</div>
+        <div class="person connectable source clickable">Keles</div>
+        <div class="person connectable source clickable">Katzián</div>
+        <div class="person connectable source clickable">Borgó</div>
+    </div>
+    <div class="dropfield">
+		<!--Central zone: Big ellipse placed in the middle of dropfield.-->
+        <div class="centerzone"></div>
+		<!--Destination zones (dropzones): empty circles distributedx evenly around center zone-->
+        <div class="dz dz-1 connectable destination clickable"></div>
+		<div class="dz dz-2 connectable destination clickable"></div>
+		<div class="dz dz-3 connectable destination clickable"></div>
+        <div class="dz dz-4 connectable destination clickable"></div>
+		<div class="dz dz-5 connectable destination clickable"></div>
+		<div class="dz dz-6 connectable destination clickable"></div>
+        <div class="dz dz-7 connectable destination clickable"></div>
+		<div class="dz dz-8 connectable destination clickable"></div>
+		<div class="dz dz-9 connectable destination clickable"></div>
+        <div class="dz dz-10 connectable destination clickable"></div>
+		<div class="dz dz-11 connectable destination clickable"></div>
+		<div class="dz dz-12 connectable destination clickable"></div>
+		<!--Connection arrows: Connects the edge of center zone with the edge of each Destination zone.
+		Positive characters: one-side arrows: ==>. Negative ones: double side arrows: <==> -->
+        <div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-positive"></div>
+		<div class="ca ca-1 ca-negative"></div>
+		<div class="ca ca-1 ca-negative"></div>
+		<div class="ca ca-1 ca-negative"></div>
+
+    </div>
+</div>
+
+<div class="panel buttons">
+    <button id="btnShowResults" data-bear="MSwz" class="button red show-when-unanswered">Na, lássuk a medvét!</button>
+    <button id="btnRetry" data-pid="p01" class="button red show-when-answered">Újra megpróbálom</button>
+    <button id="btnShowCorrectAnswer" class="button red show-when-fail">Mi a helyes válasz?</button>
+    <button id="btnExit" data-url="/interaktiv" class="button red">Kifelé innen!</button>
+</div>
+
+<div id="bear" class="panel">
+    <div class="answer ok">A válaszod helyes</div>
+    <div class="answer fail">A válaszod helytelen</div>
+</div>
+
+<script src="js/3rdparty/jquery/jquery-1.12.4.min.js"></script>
+<script src="js/tz/commons.js"></script>
+<script src="js/tz/p04.js"></script>
+</body>
+</html>

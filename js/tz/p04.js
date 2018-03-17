@@ -52,28 +52,34 @@
             svgHeight = $problem.height() - (descHeight + buttonsHeight + bearHeight),
             dropFieldHeight,
             dropFieldUnit,
-            dropZoneWidth, //0.2 * Math.min(dropFieldWidth, dropFielHeight);
+            dropZoneR, //0.2 * Math.min(dropFieldWidth, dropFielHeight);
             midCirc = {l:0,t:0,x:0,y:0,r:0},
-            centerZoneWidth, centerZoneHeight;
+            centerZoneWidth, centerZoneHeight,
+            ellipseA =0, ellipseB =0;
 
         $svgs.height(svgHeight);
         dropFieldHeight = $dropField.height();
         dropFieldUnit = Math.min(dropFieldWidth, dropFieldHeight);
-        dropZoneWidth = 0.15 * dropFieldUnit;
         centerZoneWidth = 0.25 * dropFieldUnit;
         centerZoneHeight = 0.25 * dropFieldUnit;
-        $centerzone.css({width: centerZoneWidth, height: centerZoneHeight});
-        midCirc = {l:(dropFieldWidth - $centerzone.width())/2, t: (dropFieldHeight - $centerzone.height())/2, x:dropFieldWidth/2,y: dropFieldHeight/2, r:centerZoneWidth/2};
+        $centerzone.css({width: centerZoneWidth, height: centerZoneHeight}),
+        midCirc = {x:dropFieldWidth/2,y: dropFieldHeight/2, r:centerZoneWidth/2, l:0, t: 0};
+        midCirc.l = midCirc.x - midCirc.r;
 
+        midCirc.t = midCirc.y - midCirc.r;
         $centerzone.css({left: midCirc.l, top: midCirc.t});
+
+        ellipseA = 0.75 * dropFieldWidth/2;
+        ellipseB = 0.75 * dropFieldHeight/2;
+        dropZoneR = 0.25 * ellipseB;
 
         console.log('centerzonePos(x,y): ', midCirc);
         $('#p04 .dropfield .dz').each(function(i, dz){
             var $dz = $(dz),
-                dzLeft = midCirc.x + midCirc.r * Math.cos(i*Math.PI/6),
-                dzTop = midCirc.y - midCirc.r * Math.sin(i*Math.PI/6);
+                dzLeft = midCirc.x + ellipseA * Math.cos(i*Math.PI/6) - dropZoneR,
+                dzTop = midCirc.y - ellipseB * Math.sin(i*Math.PI/6) - dropZoneR;
 
-            $dz.css({width: dropZoneWidth, height: dropZoneWidth, left: dzLeft, top:dzTop});
+            $dz.css({width: 2 * dropZoneR, height: 2 * dropZoneR, left: dzLeft, top:dzTop});
         });
         $('#p04 .dropfield .dz').show();
     }

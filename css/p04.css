@@ -61,9 +61,6 @@
     width: 25%;
     height: 25%;
     margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: url("../img/blue-center.svg") no-repeat 0 0;
     background-size: 100% 100%;
     border: 2px solid black;
@@ -83,8 +80,31 @@
     background-size: 100% 100%;
 }
 #p04 #bear.panel {
-    float: left;
+    Xfloat: left;
     width: 100%;
     height: 120px;
     border: 1px solid darkmagenta;
+}
+/*** Aroows ***/
+#p04 .ca{
+    width: 200px;
+    position: absolute;
+    height:12px;
+}
+
+#p04 .ca > .left {
+    float: left;
+    width: 14px;
+    height: 100%;
+}
+#p04 .ca > .right {
+    float: right;
+    width: calc(100% - 14px);
+    height: 100%;
+}
+#p04 .ca-positive, #p04 .ca-negative > .right {
+    background: url("../img/Arrow.png") no-repeat 100% 50%;
+}
+#p04 .ca-negative > .left{
+    background: url("../img/Arrow.png") no-repeat 0 50%;
 }
